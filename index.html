@@ -1,0 +1,20 @@
+<html lang="ru">
+<header>
+    <title>Поиск</title>
+</header>
+<body>
+<label for="number">Номер</label><input id="number"/>
+<button onclick="search()">Найти</button>
+<pre id="result"></pre>
+</body>
+<script>
+function search() {
+    const number = document.getElementById('number').value;
+    fetch(`/search?number=${number}`)
+       .then(response => response.text())
+       .then(data => {
+            document.getElementById('result').innerText = data;
+        });
+}
+</script>
+</html>
