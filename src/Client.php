@@ -23,7 +23,17 @@ class Client
 
 
     /**
-     * @throws GuzzleException
+     * Поиск кадастровой информации по кадастровому номеру.
+     *
+     * Этот метод отправляет POST-запрос к API Росреестра для поиска
+     * кадастровой информации на основе предоставленного кадастрового номера.
+     *
+     * @param string $number Кадастровый номер для поиска.
+     *
+     * @return Response|null Возвращает объект Response, содержащий кадастровую
+     *                       информацию, если она найдена, или null, если данные недоступны.
+     *
+     * @throws GuzzleException В случае ошибки при выполнении HTTP-запроса.
      */
     public function searchByCadastral(string $number): ?Response
     {
