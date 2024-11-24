@@ -13,7 +13,8 @@
     "require": {
         "php": "^8.2",
         "guzzlehttp/guzzle": "^7.9.2",
-        "yiisoft/hydrator": "^1.5.0"
+        "yiisoft/hydrator": "^1.5.0",
+        "ext-dom": "*"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.13.0",
