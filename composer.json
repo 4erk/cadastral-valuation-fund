@@ -12,9 +12,10 @@
     ],
     "require": {
         "php": "^8.2",
+        "ext-dom": "*",
+        "ext-libxml": "*",
         "guzzlehttp/guzzle": "^7.9.2",
-        "yiisoft/hydrator": "^1.5.0",
-        "ext-dom": "*"
+        "yiisoft/hydrator": "^1.5.0"
     },
     "require-dev": {
         "maglnet/composer-require-checker": "^4.13.0",
