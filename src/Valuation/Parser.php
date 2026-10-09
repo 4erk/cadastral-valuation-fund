@@ -13,7 +13,7 @@ use UnexpectedValueException;
  * @deprecated Old Rosreestr HTML table parser. New clients use HistoryParser
  *             and the NSPD Data Fund JSON API. Kept for backwards compatibility.
  */
-final class Parser
+class Parser
 {
     private DOMDocument $dom;
 

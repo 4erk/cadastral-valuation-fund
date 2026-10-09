@@ -14,9 +14,11 @@ use Rosreestr\Cadastral\Valuation\Response;
 use RuntimeException;
 use UnexpectedValueException;
 
-final class Client
+class Client
 {
     public const BASE_URL = 'https://nspd.gov.ru';
+    /** @deprecated Retained for v1 consumers; NSPD JSON API is now used internally. */
+    public const SEARCH_CADASTRAL_URL = '/wps/portal/p/cc_ib_portal_services/cc_ib_ais_fdgko/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zi3QNNXA2dTQy93UOdzAwcPQO8nMI8nQ0MDMz1w9EUBBqaAxU4ehsaG7obGPgb6keRph9DAUi_AQ7gaADUH4VmBaoLnI0IKAA5kZAlBbmhEQaZnooANTW-bQ!!/p0/IZ7_GQ4E1C41KGUB60AIPJBVIC0080=CZ6_GQ4E1C41KGUB60AIPJBVIC0007=MEcontroller!searchObjects==/';
     public const HISTORY_PATH = '/api/data-fund/v3/cadastral-value-history-table';
     public const DIAGRAM_PATH = '/api/data-fund/v2/cadastral-history-diagram';
     public const CURRENT_PATH = '/api/data-fund/v1/cadastral-now';

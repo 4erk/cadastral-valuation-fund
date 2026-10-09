@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rosreestr\Cadastral\Valuation;
 
-final class Value implements \JsonSerializable
+class Value implements \JsonSerializable
 {
     /** Amount in rubles. This float is kept for backwards compatibility. */
     public ?float $value = null;
