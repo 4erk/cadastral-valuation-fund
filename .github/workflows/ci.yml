@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: PHP ${{ matrix.php }} / unit tests
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        php: ['8.2', '8.3']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: curl, dom, json, libxml
+          coverage: none
+          tools: composer:v2
+      - name: Install dependencies
+        run: composer install --prefer-dist --no-interaction --no-progress
+      - name: Validate Composer
+        run: composer validate --strict --no-check-publish
+      - name: Audit production dependencies
+        run: composer audit --locked --no-dev --no-interaction
+      - name: Lint PHP
+        run: |
+          for file in src/*.php src/Valuation/*.php tests/*.php tools/*.php; do
+            php -l "$file"
+          done
+      - name: Lint dev-flow
+        run: bash -n .dev-flow/adapter.sh
+      - name: PHPUnit
+        run: composer test
