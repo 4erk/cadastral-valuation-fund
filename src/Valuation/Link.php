@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rosreestr\Cadastral\Valuation;
 
-final class Link implements \JsonSerializable
+class Link implements \JsonSerializable
 {
     public ?string $url = null;
     public ?string $text = null;

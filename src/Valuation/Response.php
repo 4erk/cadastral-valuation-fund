@@ -6,7 +6,7 @@ namespace Rosreestr\Cadastral\Valuation;
 
 use Yiisoft\Hydrator\Hydrator;
 
-final class Response implements \JsonSerializable
+class Response implements \JsonSerializable
 {
     /** @param Item[] $items */
     public function __construct(
@@ -51,7 +51,7 @@ final class Response implements \JsonSerializable
         return $latest;
     }
 
-    public function addItem(Item $item): void
+    public function addItem($item): void
     {
         $this->items[] = $item;
     }

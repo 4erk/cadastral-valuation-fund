@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rosreestr\Cadastral\Valuation;
 
-final class Item implements \JsonSerializable
+class Item implements \JsonSerializable
 {
     public ?string $cadNumber = null;
     public ?string $costRecordId = null;
